@@ -1,0 +1,10 @@
+.menu {
+  outline: transparent;
+  border: none;
+  background: none;
+  z-index: 10;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

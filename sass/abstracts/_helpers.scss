@@ -1,0 +1,29 @@
+// flex classes
+.flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+.space-between {
+  justify-content: space-between;
+}
+.center {
+  align-items: center;
+}
+
+// grid classes
+.grid {
+  display: grid;
+}
+
+// general
+.hidden {
+  display: none;
+}
+.gap-1 {
+  gap: 1rem;
+}

@@ -1,0 +1,40 @@
+nav {
+  gap: 1rem;
+  width: 60%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5rem 1.5rem;
+
+  .nav__list {
+    list-style: none;
+  }
+  .nav__item-link {
+    padding-left: 1rem;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  input,
+  button {
+    text-align: left;
+    outline: transparent;
+    border: transparent;
+    background-color: transparent;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .arrow {
+    width: 10px;
+    height: 6px;
+    margin: auto;
+    margin-left: 0;
+  }
+}

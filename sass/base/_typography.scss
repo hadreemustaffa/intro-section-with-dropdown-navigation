@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+body {
+  font-family: $ff-primary;
+  font-size: $fs-body-1;
+  font-weight: 500;
+  color: $clr-neutral-2;
+}
+
+nav,
+button,
+input {
+  color: $clr-neutral-2;
+  font-size: $fs-body-2;
+}
