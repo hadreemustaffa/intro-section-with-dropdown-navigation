@@ -1,34 +1,42 @@
-const menuBtn = document.getElementById('menuBtn');
-const menuContent = document.querySelector('nav');
-const menuItem = document.querySelectorAll('.nav__item');
+const toggleBtn = document.querySelector('.btn-toggle');
+const navigationBar = document.querySelector('nav');
+const dropdownItems = Array.from(document.querySelectorAll('[aria-haspopup]'));
 
-const menuUrl = '/assets/images/icon-menu.svg';
+const menuOpenUrl = '/assets/images/icon-menu.svg';
 const menuCloseUrl = '/assets/images/icon-close-menu.svg';
-const arrowUpUrl = '/assets/images/icon-arrow-up.svg';
-const arrowDownUrl = '/assets/images/icon-arrow-down.svg';
 
-menuBtn.addEventListener('click', () => {
-  if (menuContent.classList.contains('hidden')) {
-    menuBtn.firstElementChild.src = menuCloseUrl;
-    menuContent.classList.remove('hidden');
+toggleBtn.addEventListener('click', () => {
+  if (toggleBtn.getAttribute('aria-expanded') === 'false') {
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.firstElementChild.src = menuCloseUrl;
   } else {
-    menuBtn.firstElementChild.src = menuUrl;
-    menuContent.classList.add('hidden');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.firstElementChild.src = menuOpenUrl;
   }
+  navigationBar.classList.toggle('open');
+  navigationBar.style.transition = 'transform 0.25s ease-in-out';
+});
+console.log(navigationBar);
+navigationBar.addEventListener('transitionend', () => {
+  navigationBar.removeAttribute('style');
 });
 
-Array.from(menuItem).forEach((item) => {
-  const input = item.querySelector('input');
-  const arrow = item.querySelector('.arrow');
-  const list = item.querySelector('ul');
+dropdownItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    const itemList = item.nextElementSibling;
+    const arrow = item.firstElementChild;
 
-  input?.addEventListener('click', () => {
-    if (list.classList.contains('hidden')) {
-      arrow.src = arrowDownUrl;
-      list.classList.remove('hidden');
+    if (item.getAttribute('aria-expanded') !== 'true') {
+      item.setAttribute('aria-expanded', 'true');
+      itemList.classList.add('flex');
+      itemList.style.visibility = 'visible';
+      arrow.style.transform = 'rotate(180deg)';
     } else {
-      arrow.src = arrowUpUrl;
-      list.classList.add('hidden');
+      item.setAttribute('aria-expanded', 'false');
+      itemList.classList.remove('flex');
+      itemList.style.visibility = 'hidden';
+      itemList.removeAttribute('style');
+      arrow.style.transform = 'rotate(0)';
     }
   });
 });

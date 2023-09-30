@@ -5,114 +5,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Intro Section with Dropdown Navigation solution for Frontendmentor.io">
-
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-
   <link rel="stylesheet" href="/dist/style.css">
   <script defer src="index.js"></script>
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
 </head>
 
 <body>
-  <header class="flex row space-between">
-    <img src="/assets/images/logo.svg" width="84" height="26" alt="">
-    <button id="menuBtn" class="menu" type="button" aria-controls="navigation-drawer" aria-expanded="false">
-      <img src="assets/images/icon-menu.svg" alt="menu">
+  <header>
+    <a href="#">
+      <img class="logo" src="/assets/images/logo.svg" alt="snap brand logo">
+    </a>
+
+    <button class="btn-toggle" type="button" aria-expanded="false">
+      <img src="assets/images/icon-menu.svg" alt="navigation menu icon">
     </button>
+
+    <nav role="navigation">
+      <ul class="main-menu" role="menubar">
+        <li class="dropdown" role="none">
+          <a class="dropdown__item" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Features
+            <img class="arrow" src="assets/images/icon-arrow-down.svg" alt="">
+          </a>
+          <ul class="dropdown__list" role="menu" aria-hidden="true" aria-label="Features">
+            <li role="none">
+              <a class="dropdown__list-link" href="#todo-list" role="menuitem">
+                <img src="/assets/images/icon-todo.svg" alt="">
+                Todo List
+              </a>
+            </li>
+            <li role="none">
+              <a class="dropdown__list-link" href="#calendar" role="menuitem">
+                <img src="/assets/images/icon-calendar.svg" alt="">
+                Calendar
+              </a>
+            </li>
+            <li role="none">
+              <a class="dropdown__list-link" href="#reminders" role="menuitem">
+                <img src="/assets/images/icon-reminders.svg" alt="">
+                Reminders
+              </a>
+            </li>
+            <li role="none">
+              <a class="dropdown__list-link" href="#planning" role="menuitem">
+                <img src="/assets/images/icon-planning.svg" alt="">
+                Planning
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown" role="none">
+          <a class="dropdown__item" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Company
+            <img class="arrow" src="assets/images/icon-arrow-down.svg" alt="">
+          </a>
+          <ul class="dropdown__list" role="menu" aria-hidden="true" aria-label="Company">
+            <li role="none">
+              <a class="dropdown__list-link" href="#history" role="menuitem">
+                History
+              </a>
+            </li>
+            <li role="none">
+              <a class="dropdown__list-link" href="#our-team" role="menuitem">
+                Our Team
+              </a>
+            </li>
+            <li role="none">
+              <a class="dropdown__list-link" href="#blog" role="menuitem">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li role="none">
+          <a class="main-menu__item" href="#careers" role="menuitem">Careers</a>
+        </li>
+        <li role="none">
+          <a class="main-menu__item" href="#about" role="menuitem">About</a>
+        </li>
+      </ul>
+
+      <div class="btn-container">
+        <button class="btn btn-tertiary" type="button">Login</button>
+        <button class="btn btn-secondary" type="button">Register</button>
+      </div>
+    </nav>
   </header>
 
-  <nav class="flex column" role="navigation">
-    <ul id="navigation-drawer" class="nav__list flex column gap-1">
-
-      <li class="nav__item flex column gap-1">
-        <div class="flex row gap-1">
-          <input type="button" value="Features">
-          <img class="arrow" src="assets/images/icon-arrow-up.svg" alt="">
-        </div>
-        <ul class="nav__item-list flex column gap-1 hidden">
-          <li class="nav__item-link flex row gap-1">
-            <img src="/assets/images/icon-todo.svg" alt="">
-            <a href="#">Todo List</a>
-          </li>
-          <li class="nav__item-link flex row gap-1">
-            <img src="/assets/images/icon-calendar.svg" alt="">
-            <a href="#">Calendar</a>
-          </li>
-          <li class="nav__item-link flex row gap-1">
-            <img src="/assets/images/icon-reminders.svg" alt="">
-            <a href="#">Reminders</a>
-          </li>
-          <li class="nav__item-link flex row gap-1">
-            <img src="/assets/images/icon-planning.svg" alt="">
-            <a href="#">Planning</a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="nav__item flex column gap-1">
-        <div class="flex row gap-1">
-          <input type="button" value="Company">
-          <img class="arrow" src="assets/images/icon-arrow-up.svg" alt="">
-        </div>
-        <ul class="nav__item-list flex column gap-1 hidden">
-          <li class="nav__item-link flex row">
-            <a href="#">History</a>
-          </li>
-          <li class="nav__item-link flex row">
-            <a href="#">Our Team</a>
-          </li>
-          <li class="nav__item-link flex row">
-            <a href="#">Blog</a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="nav__item">
-        <a href="#">Careers</a>
-      </li>
-      <li class="nav__item">
-        <a href="#">About</a>
-      </li>
-    </ul>
-
-    <ul class="nav__list flex column gap-1">
-      <li class="nav__item">
-        <input type="button" value="Login">
-      </li>
-      <li class="nav__item">
-        <input type="button" value="Register">
-      </li>
-    </ul>
-
-  </nav>
-
   <main>
-    <div>
-      <picture>
-        <source media="(max-width: 768px)" srcset="/assets/images/image-hero-mobile.png">
-        <source media="(min-width: 769px)" srcset="/assets/images/image-hero-desktop.png">
-        <img src="/assets/images/image-hero-mobile.png" alt="standing man holding laptop">
-      </picture>
-    </div>
+    <picture>
+      <source media="(max-width: 991px)" srcset="/assets/images/image-hero-mobile.png">
+      <source media="(min-width: 992px)" srcset="/assets/images/image-hero-desktop.png">
+      <img src="/assets/images/image-hero-mobile.png" alt="standing man holding laptop">
+    </picture>
 
-    <div>
-      <h1>Make remote work</h1>
-      <p>Get your team in sync, no matter your location. Streamline processes,
-        create team rituals, and watch productivity soar.</p>
-      <button type="button">Learn More</button>
-    </div>
+    <div class="container flex column">
+      <div class="container__text flex column">
+        <h1>Make remote work</h1>
+        <p>Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.</p>
+        <button class="btn btn-primary" type="button">Learn More</button>
+      </div>
 
-    <div>
-      <img src="/assets/images/client-databiz.svg" alt="">
-      <img src="/assets/images/client-audiophile.svg" alt="">
-      <img src="/assets/images/client-meet.svg" alt="">
-      <img src="/assets/images/client-maker.svg" alt="">
+      <div class="container__logo flex row space-between">
+        <img src="/assets/images/client-databiz.svg" alt="">
+        <img src="/assets/images/client-audiophile.svg" alt="">
+        <img src="/assets/images/client-meet.svg" alt="">
+        <img src="/assets/images/client-maker.svg" alt="">
+      </div>
     </div>
-
   </main>
 
-  <footer class="attribution">
+  <footer class="attribution" role="contentinfo">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Hadree Mustaffa</a>.
   </footer>

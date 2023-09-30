@@ -1,0 +1,67 @@
+@use "../abstracts/breakpoints" as *;
+
+main {
+  grid-column: 1;
+  grid-row: 2;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.25fr auto;
+  gap: 3.125rem;
+
+  .container {
+    justify-content: space-between;
+    text-align: center;
+    gap: 3.125rem;
+    padding: 0 1rem;
+
+    &__text {
+      gap: 1.875rem;
+    }
+
+    .btn {
+      align-self: center;
+    }
+
+    &__logo {
+      img {
+        width: 60px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@include sm {
+  main {
+    margin: 0 auto;
+    max-width: 30rem;
+  }
+}
+
+@include lg {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 80rem;
+    gap: 5rem;
+
+    picture {
+      max-width: 440px;
+      grid-area: 1 / 2 / 1 / 2;
+      margin: auto;
+    }
+    .container {
+      padding-left: 5rem;
+      text-align: left;
+      grid-area: 1 / 1 / 1 / 1;
+
+      &__text {
+        padding-top: 6rem;
+      }
+      .btn {
+        align-self: flex-start;
+      }
+    }
+  }
+}

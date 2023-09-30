@@ -7,9 +7,36 @@ body {
   color: $clr-neutral-2;
 }
 
-nav,
-button,
-input {
-  color: $clr-neutral-2;
+h1 {
+  font-size: $fs-heading;
+  color: $clr-neutral-3;
+  line-height: 1;
+}
+
+p {
   font-size: $fs-body-2;
+}
+
+nav,
+button {
+  font-size: $fs-body-2;
+  color: $clr-neutral-2;
+}
+
+a {
+  color: $clr-neutral-2;
+  font-size: 1em;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    color: $clr-neutral-3;
+  }
+}
+
+.attribution {
+  font-size: 0.75rem;
+
+  a {
+    text-decoration: underline;
+  }
 }

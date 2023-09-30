@@ -1,6 +1,8 @@
+@use "variables" as *;
+
 // flex classes
 .flex {
-  display: flex;
+  display: flex !important;
 }
 .row {
   flex-direction: row;
@@ -11,19 +13,12 @@
 .space-between {
   justify-content: space-between;
 }
-.center {
-  align-items: center;
-}
-
-// grid classes
-.grid {
-  display: grid;
-}
 
 // general
 .hidden {
   display: none;
 }
-.gap-1 {
-  gap: 1rem;
+
+.open {
+  transform: none;
 }
