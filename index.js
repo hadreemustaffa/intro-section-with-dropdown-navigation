@@ -1,42 +1,64 @@
 const toggleBtn = document.querySelector('.btn-toggle');
 const navigationBar = document.querySelector('nav');
-const dropdownItems = Array.from(document.querySelectorAll('[aria-haspopup]'));
+const dropdownItems = document.querySelectorAll('.dropdown__item');
 
 const menuOpenUrl = '/assets/images/icon-menu.svg';
 const menuCloseUrl = '/assets/images/icon-close-menu.svg';
 
-toggleBtn.addEventListener('click', () => {
+const resetDropdown = (itemSelector, list, icon) => {
+  itemSelector.setAttribute('aria-expanded', 'false');
+  list.classList.remove('flex');
+  list.style.visibility = 'hidden';
+  list.removeAttribute('style');
+  icon.style.transform = 'rotate(0)';
+  icon.removeAttribute('style');
+};
+
+const expandDropdown = (itemSelector, list, icon) => {
+  itemSelector.setAttribute('aria-expanded', 'true');
+  list.classList.add('flex');
+  list.style.visibility = 'visible';
+  icon.style.transform = 'rotate(180deg)';
+};
+
+const toggleNavigationBar = () => {
   if (toggleBtn.getAttribute('aria-expanded') === 'false') {
     toggleBtn.setAttribute('aria-expanded', 'true');
     toggleBtn.firstElementChild.src = menuCloseUrl;
   } else {
     toggleBtn.setAttribute('aria-expanded', 'false');
     toggleBtn.firstElementChild.src = menuOpenUrl;
+    dropdownItems.forEach((item) => {
+      resetDropdown(item, item.nextElementSibling, item.firstElementChild);
+    });
   }
   navigationBar.classList.toggle('open');
   navigationBar.style.transition = 'transform 0.25s ease-in-out';
+};
+
+toggleBtn.addEventListener('click', () => {
+  toggleNavigationBar();
 });
-console.log(navigationBar);
+
 navigationBar.addEventListener('transitionend', () => {
   navigationBar.removeAttribute('style');
 });
 
 dropdownItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    const itemList = item.nextElementSibling;
-    const arrow = item.firstElementChild;
+  const list = item.nextElementSibling;
+  const arrow = item.firstElementChild;
 
+  item.addEventListener('click', () => {
     if (item.getAttribute('aria-expanded') !== 'true') {
-      item.setAttribute('aria-expanded', 'true');
-      itemList.classList.add('flex');
-      itemList.style.visibility = 'visible';
-      arrow.style.transform = 'rotate(180deg)';
+      expandDropdown(item, list, arrow);
     } else {
-      item.setAttribute('aria-expanded', 'false');
-      itemList.classList.remove('flex');
-      itemList.style.visibility = 'hidden';
-      itemList.removeAttribute('style');
-      arrow.style.transform = 'rotate(0)';
+      resetDropdown(item, list, arrow);
+    }
+  });
+
+  item.addEventListener('blur', () => {
+    if (window.innerWidth >= 992) {
+      resetDropdown(item, list, arrow);
     }
   });
 });
