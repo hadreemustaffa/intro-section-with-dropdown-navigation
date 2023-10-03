@@ -9,6 +9,10 @@ body {
   transition: 0.25s ease;
 
   @include sm {
+    padding: 0 1rem;
+  }
+
+  @include lg {
     padding: 0 2rem;
   }
 }

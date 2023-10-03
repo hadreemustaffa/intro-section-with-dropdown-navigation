@@ -6,52 +6,48 @@
   background-color: transparent;
   border: solid transparent;
   border-radius: 1rem;
-  transition: 0.1s ease-in;
+  transition: 0.1s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: $clr-neutral-3;
+  }
+  &:focus-visible {
+    outline: 2px solid $clr-neutral-3;
+  }
+}
+
+.dropdown__item {
+  border-radius: 0;
+}
+
+.btn-primary {
+  padding: 1rem 2rem;
+  color: $clr-neutral-1;
+  background-color: $clr-neutral-3;
+  &:hover {
+    color: $clr-neutral-3;
+    background-color: $clr-neutral-1;
+    box-shadow: 0 0 5px hsl(0, 0%, 15%);
+  }
+  &:active {
+    color: $clr-neutral-3;
+    background-color: $clr-neutral-1;
+  }
+  &:focus {
+    outline-offset: 2px;
+  }
+}
+
+.btn-toggle {
+  border-radius: 0;
+  z-index: 50;
 
   &:hover {
     cursor: pointer;
   }
-  &:active {
-    transform: scale(0.99);
-  }
-  &:focus {
-    outline-offset: -2px;
-    outline: 2px solid $clr-neutral-3;
-  }
-
-  &.btn-primary {
-    padding: 1rem 2rem;
-    color: $clr-neutral-1;
-    background-color: $clr-neutral-3;
-    &:hover {
-      color: $clr-neutral-3;
-      background-color: $clr-neutral-1;
-      box-shadow: 0 0 5px hsl(0, 0%, 15%);
-    }
-    &:active {
-      color: $clr-neutral-3;
-      background-color: $clr-neutral-1;
-    }
-    &:focus {
-      outline-offset: 2px;
-    }
-  }
-
-  &.btn-secondary {
-    padding: 0.5rem 2rem;
-    border: 2px solid $clr-neutral-2;
-  }
-
-  &.btn-tertiary {
-    padding: 0 2rem;
-  }
-
-  &.btn-secondary,
-  &.btn-tertiary {
-    width: 100%;
-
-    &:hover {
-      color: $clr-neutral-3;
-    }
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid black;
   }
 }

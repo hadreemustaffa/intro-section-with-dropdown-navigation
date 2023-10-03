@@ -16,7 +16,7 @@ header {
   }
 
   img {
-    width: 26px;
+    width: 24px;
     height: 18px;
   }
 }
@@ -35,11 +35,6 @@ nav {
 
   ul {
     list-style: none;
-
-    &:focus,
-    li:focus {
-      outline: 2px solid $clr-neutral-1;
-    }
   }
 
   .main-menu {
@@ -50,6 +45,9 @@ nav {
     &__item {
       display: inline-block;
       width: 100%;
+      &:focus-visible {
+        outline: 2px solid $clr-neutral-3;
+      }
     }
 
     .dropdown {
@@ -97,6 +95,10 @@ nav {
     gap: 1rem;
     margin-top: 2rem;
   }
+
+  .register {
+    text-align: center;
+  }
 }
 
 @include lg {
@@ -137,7 +139,6 @@ nav {
           border-radius: 0.5rem;
           box-shadow: 0 0 50px -25px $clr-neutral-2;
           visibility: hidden;
-          transition: visibility 0.25s ease;
         }
 
         &:first-child ul {
