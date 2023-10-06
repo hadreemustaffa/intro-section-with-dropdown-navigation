@@ -24,9 +24,11 @@ main {
     }
 
     &__logo {
+      flex-wrap: wrap;
+      gap: 1rem;
       img {
         width: 60px;
-        height: 20px;
+        height: 26px;
       }
     }
   }

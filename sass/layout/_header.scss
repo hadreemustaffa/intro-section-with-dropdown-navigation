@@ -139,6 +139,7 @@ nav {
           border-radius: 0.5rem;
           box-shadow: 0 0 50px -25px $clr-neutral-2;
           visibility: hidden;
+          transition: all 0.25s ease;
         }
 
         &:first-child ul {

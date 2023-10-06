@@ -284,6 +284,7 @@ nav .register {
     border-radius: 0.5rem;
     box-shadow: 0 0 50px -25px hsl(0, 0%, 41%);
     visibility: hidden;
+    transition: all 0.25s ease;
   }
   nav .main-menu .dropdown:first-child ul {
     left: -3.5rem;
@@ -316,9 +317,13 @@ main .container__text {
 main .container .btn {
   align-self: center;
 }
+main .container__logo {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 main .container__logo img {
   width: 60px;
-  height: 20px;
+  height: 26px;
 }
 
 @media (min-width: 36rem) {
@@ -407,11 +412,11 @@ footer {
   outline: 2px solid black;
 }
 
-.login {
+.btn-login {
   padding: 0 2rem;
   width: 100%;
 }
-.login:hover {
+.btn-login:hover {
   color: hsl(0, 0%, 8%);
 }
 
