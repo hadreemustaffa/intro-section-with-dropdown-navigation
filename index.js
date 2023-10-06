@@ -5,7 +5,7 @@ const dropdownItems = document.querySelectorAll('.dropdown__item');
 const menuOpenUrl = '/assets/images/icon-menu.svg';
 const menuCloseUrl = '/assets/images/icon-close-menu.svg';
 
-const resetDropdown = (itemSelector, list, icon) => {
+const collapseDropdown = (itemSelector, list, icon) => {
   itemSelector.setAttribute('aria-expanded', 'false');
   list.classList.remove('flex');
   list.style.visibility = 'hidden';
@@ -29,7 +29,7 @@ const toggleNavigationBar = () => {
     toggleBtn.setAttribute('aria-expanded', 'false');
     toggleBtn.firstElementChild.src = menuOpenUrl;
     dropdownItems.forEach((item) => {
-      resetDropdown(item, item.nextElementSibling, item.firstElementChild);
+      collapseDropdown(item, item.nextElementSibling, item.firstElementChild);
     });
   }
   navigationBar.classList.toggle('open');
@@ -52,13 +52,20 @@ dropdownItems.forEach((item) => {
     if (item.getAttribute('aria-expanded') !== 'true') {
       expandDropdown(item, list, arrow);
     } else {
-      resetDropdown(item, list, arrow);
+      collapseDropdown(item, list, arrow);
     }
   });
 
-  item.addEventListener('blur', () => {
-    if (window.innerWidth >= 992) {
-      resetDropdown(item, list, arrow);
+  list.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      collapseDropdown(item, list, arrow);
+      item.focus({ focusVisible: true });
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      collapseDropdown(item, list, arrow);
     }
   });
 });
