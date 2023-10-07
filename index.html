@@ -12,24 +12,24 @@
 </head>
 
 <body>
-  <header>
+  <header class="flex row">
     <a href="/">
       <img class="logo" src="/assets/images/logo.svg" alt="snap brand logo">
     </a>
 
-    <button class="btn btn-toggle" type="button" aria-expanded="false">
-      <img src="assets/images/icon-menu.svg" alt="navigation menu icon">
-    </button>
+    <nav role="navigation" class="flex column">
+      <button class="btn btn-toggle" type="button" aria-controls="mainMenu" aria-expanded="false">
+        <img src="assets/images/icon-menu.svg" alt="navigation menu icon">
+      </button>
 
-    <nav role="navigation">
-      <ul class="main-menu">
+      <ul id="mainMenu" class="main-menu flex">
         <li class="dropdown">
-          <button class="btn dropdown__item" type="button" aria-controls="feature_dropdown" aria-expanded="false"
+          <button class="btn dropdown__item" type="button" aria-controls="featureDropdownMenu" aria-expanded="false"
             aria-label="feature dropdown menu">
             Features
             <img class="arrow" src="assets/images/icon-arrow-down.svg" alt="">
           </button>
-          <ul id="feature_dropdown" class="dropdown__list" aria-label="Features">
+          <ul id="featureDropdownMenu" class="dropdown__list" aria-label="Features">
             <li>
               <a class="dropdown__list-link" href="#todo-list">
                 <img src="/assets/images/icon-todo.svg" alt="">
@@ -58,12 +58,12 @@
         </li>
 
         <li class="dropdown">
-          <button class="btn dropdown__item" type="button" aria-controls="company_dropdown" aria-expanded="false"
+          <button class="btn dropdown__item" type="button" aria-controls="companyDropdownMenu" aria-expanded="false"
             aria-label="company dropdown menu">
             Company
             <img class="arrow" src="assets/images/icon-arrow-down.svg" alt="">
           </button>
-          <ul id="company_dropdown" class="dropdown__list" aria-label="Company">
+          <ul id="companyDropdownMenu" class="dropdown__list" aria-label="Company">
             <li>
               <a class="dropdown__list-link" href="#history">
                 History
@@ -88,12 +88,13 @@
         <li>
           <a class="main-menu__item" href="#about">About</a>
         </li>
+
+        <div class="btn-container">
+          <button class="btn btn-login" type="button">Login</button>
+          <a class="register" href="#">Register</a>
+        </div>
       </ul>
 
-      <div class="btn-container">
-        <button class="btn btn-login" type="button">Login</button>
-        <a class="register" href="#">Register</a>
-      </div>
     </nav>
   </header>
 

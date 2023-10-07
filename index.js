@@ -1,5 +1,5 @@
 const toggleBtn = document.querySelector('.btn-toggle');
-const navigationBar = document.querySelector('nav');
+const mainMenu = document.querySelector('.main-menu');
 const dropdownItems = document.querySelectorAll('.dropdown__item');
 
 const menuOpenUrl = '/assets/images/icon-menu.svg';
@@ -21,7 +21,7 @@ const expandDropdown = (itemSelector, list, icon) => {
   icon.style.transform = 'rotate(180deg)';
 };
 
-const toggleNavigationBar = () => {
+const toggleMainMenu = () => {
   if (toggleBtn.getAttribute('aria-expanded') === 'false') {
     toggleBtn.setAttribute('aria-expanded', 'true');
     toggleBtn.firstElementChild.src = menuCloseUrl;
@@ -32,16 +32,16 @@ const toggleNavigationBar = () => {
       collapseDropdown(item, item.nextElementSibling, item.firstElementChild);
     });
   }
-  navigationBar.classList.toggle('open');
-  navigationBar.style.transition = 'transform 0.25s ease-in-out';
+  mainMenu.classList.toggle('open');
+  mainMenu.style.transition = 'transform 0.25s ease-in-out';
 };
 
 toggleBtn.addEventListener('click', () => {
-  toggleNavigationBar();
+  toggleMainMenu();
 });
 
-navigationBar.addEventListener('transitionend', () => {
-  navigationBar.removeAttribute('style');
+mainMenu.addEventListener('transitionend', () => {
+  mainMenu.removeAttribute('style');
 });
 
 dropdownItems.forEach((item) => {

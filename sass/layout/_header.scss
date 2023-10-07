@@ -3,11 +3,9 @@
 header {
   grid-column: 1;
   grid-row: 1;
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 2rem;
   transition: 0.25s ease;
 
   .logo {
@@ -22,25 +20,25 @@ header {
 }
 
 nav {
-  width: 230px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 5rem 2rem 2rem;
-  background-color: white;
-  overflow-y: scroll;
-  transform: translateX(100%);
-  z-index: 1;
-
   ul {
     list-style: none;
   }
 
+  .btn-toggle {
+    align-self: flex-end;
+  }
+
   .main-menu {
-    display: flex;
+    width: 230px;
+    height: 100%;
+    background-color: white;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
     gap: 1rem;
+    padding: 5rem 2rem;
+    transform: translateX(100%);
 
     &__item {
       display: inline-block;
@@ -54,6 +52,7 @@ nav {
       position: relative;
 
       &__item {
+        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -112,21 +111,17 @@ nav {
 
   nav {
     width: 100%;
-    height: auto;
-    position: static;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: transparent;
-    transform: none;
-    overflow-y: visible;
 
     .main-menu {
+      width: 100%;
+      height: auto;
+      background-color: transparent;
+      position: static;
       flex-direction: row;
       align-items: center;
-      padding-left: 3rem;
+      padding: 0 0 0 3rem;
       gap: 3rem;
+      transform: none;
 
       .dropdown {
         &__list {
@@ -158,6 +153,7 @@ nav {
     .btn-container {
       flex-direction: row;
       margin-top: 0;
+      margin-left: auto;
     }
   }
 }
