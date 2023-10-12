@@ -90,13 +90,13 @@ select {
 @font-face {
   font-family: "Epilogue";
   font-weight: 500;
-  src: local("Epilogue"), url("/assets/fonts/Epilogue-Medium.woff2") format("woff2"), url("/assets/fonts/Epilogue-Medium.woff") format("woff");
+  src: local("Epilogue"), url("assets/fonts/Epilogue-Medium.woff2") format("woff2"), url("assets/fonts/Epilogue-Medium.woff") format("woff");
   font-display: swap;
 }
 @font-face {
   font-family: "Epilogue";
   font-weight: 700;
-  src: local("Epilogue"), url("/assets/fonts/Epilogue-Bold.woff2") format("woff2"), url("/assets/fonts/Epilogue-Bold.woff") format("woff");
+  src: local("Epilogue"), url("assets/fonts/Epilogue-Bold.woff2") format("woff2"), url("assets/fonts/Epilogue-Bold.woff") format("woff");
   font-display: swap;
 }
 body {

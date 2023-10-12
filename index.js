@@ -2,8 +2,8 @@ const toggleBtn = document.querySelector('.btn-toggle');
 const mainMenu = document.querySelector('.main-menu');
 const dropdownItems = document.querySelectorAll('.dropdown__item');
 
-const menuOpenUrl = '/assets/images/icon-menu.svg';
-const menuCloseUrl = '/assets/images/icon-close-menu.svg';
+const menuOpenUrl = 'assets/images/icon-menu.svg';
+const menuCloseUrl = 'assets/images/icon-close-menu.svg';
 
 const collapseDropdown = (itemSelector, list, icon) => {
   itemSelector.setAttribute('aria-expanded', 'false');
