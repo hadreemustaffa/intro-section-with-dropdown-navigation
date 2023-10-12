@@ -141,8 +141,7 @@ nav {
           left: -3.5rem;
         }
 
-        &:hover,
-        &__list:hover {
+        &:hover {
           .dropdown__list {
             visibility: visible;
           }

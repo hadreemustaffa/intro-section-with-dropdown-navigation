@@ -271,7 +271,7 @@ nav .register {
   nav .main-menu .dropdown:first-child ul {
     left: -3.5rem;
   }
-  nav .main-menu .dropdown:hover .dropdown__list, nav .main-menu .dropdown__list:hover .dropdown__list {
+  nav .main-menu .dropdown:hover .dropdown__list {
     visibility: visible;
   }
   nav .btn-container {
