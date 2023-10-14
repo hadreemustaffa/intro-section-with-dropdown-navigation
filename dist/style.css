@@ -277,8 +277,6 @@ nav .register {
   }
 }
 main {
-  grid-column: 1;
-  grid-row: 2;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.25fr auto;
