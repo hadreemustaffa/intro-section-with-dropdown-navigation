@@ -1,6 +1,5 @@
 @use "variables" as *;
 
-// flex classes
 .flex {
   display: flex !important;
 }
@@ -13,12 +12,9 @@
 .space-between {
   justify-content: space-between;
 }
-
-// general
 .hidden {
   display: none;
 }
-
 .open {
   transform: none !important;
 }
