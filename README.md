@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://hadreemustaffa.github.io/intro-section-with-dropdown-navigation/)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-using-vanilla-js-flex-and-grid-mYxwSVApjs)
+- Live Site URL: [Github Pages](https://hadreemustaffa.github.io/intro-section-with-dropdown-navigation/)
 
 ## My process
 
